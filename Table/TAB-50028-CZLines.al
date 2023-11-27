@@ -1,4 +1,4 @@
-table 50108 "CZ Lines"
+table 50028 "CZ Lines"
 {
     DataClassification = ToBeClassified;
 

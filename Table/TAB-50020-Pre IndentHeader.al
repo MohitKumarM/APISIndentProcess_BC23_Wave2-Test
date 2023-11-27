@@ -1,4 +1,4 @@
-table 50100 "Pre Indent Header"
+table 50020 "Pre Indent Header"
 {
 
     fields

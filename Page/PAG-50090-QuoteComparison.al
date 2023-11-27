@@ -1,4 +1,4 @@
-page 50136 "PAG-50136-QuoteComparison"
+page 50090 "PAG-50136-QuoteComparison"
 {
     ApplicationArea = All;
     Caption = 'Quote Comparison';

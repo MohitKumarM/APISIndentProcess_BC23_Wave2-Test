@@ -1,4 +1,4 @@
-page 50137 "Request To Approve Quote Comp"
+page 50091 "Request To Approve Quote Comp"
 {
     ApplicationArea = All;
     Caption = 'Request To Approve Quote Comp.';

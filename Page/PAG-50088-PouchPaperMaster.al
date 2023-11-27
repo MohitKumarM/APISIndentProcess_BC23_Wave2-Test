@@ -1,4 +1,4 @@
-page 50134 "Pouch Paper Master"
+page 50088 "Pouch Paper Master"
 {
     ApplicationArea = All;
     Caption = 'Pouch Paper Master';

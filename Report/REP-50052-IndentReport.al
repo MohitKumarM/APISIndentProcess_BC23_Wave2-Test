@@ -1,4 +1,4 @@
-report 50100 "Indent Report New"
+report 50052 "Indent Report New"
 {
     Caption = 'Indent Report';
     DefaultLayout = RDLC;

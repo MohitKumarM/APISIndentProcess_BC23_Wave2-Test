@@ -1,10 +1,10 @@
-page 50140 "Not Qualified Quote Comparison"
+page 50093 "PO Created Quote Comparison"
 {
     ApplicationArea = All;
-    Caption = 'Not Qualified Quote Comparison';
+    Caption = 'PO Created Quote Comparison';
     PageType = List;
     SourceTable = "Quote Comparison";
-    SourceTableView = where(Status = filter("Not Qualified"), Pending = const(false));
+    SourceTableView = where(Status = filter("PO Created"));
     UsageCategory = History;
     InsertAllowed = false;
     DeleteAllowed = false;

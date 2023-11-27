@@ -1,4 +1,4 @@
-table 50107 "CZ Header"
+table 50027 "CZ Header"
 {
     DataClassification = ToBeClassified;
 

@@ -1,4 +1,4 @@
-table 50103 "Posted Indent Line"
+table 50023 "Posted Indent Line"
 {
 
     fields

@@ -1,4 +1,4 @@
-page 50143 "Rejected Quote Comparison"
+page 50097 "Rejected Quote Comparison"
 {
     ApplicationArea = All;
     Caption = 'Rejected Quote Comparison';

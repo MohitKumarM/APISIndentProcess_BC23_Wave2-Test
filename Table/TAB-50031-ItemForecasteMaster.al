@@ -1,4 +1,4 @@
-table 50111 "Item Forecaste Master"
+table 50031 "Item Forecaste Master"
 {
     DataClassification = ToBeClassified;
 

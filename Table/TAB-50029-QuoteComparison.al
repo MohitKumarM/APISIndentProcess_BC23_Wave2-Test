@@ -1,4 +1,4 @@
-table 50109 "Quote Comparison"
+table 50029 "Quote Comparison"
 {
     DataClassification = ToBeClassified;
 

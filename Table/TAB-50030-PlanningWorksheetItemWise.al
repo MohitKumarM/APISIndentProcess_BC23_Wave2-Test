@@ -1,4 +1,4 @@
-table 50110 "PM Planning Item Wise"
+table 50030 "PM Planning Item Wise"
 {
     Caption = 'PM Planning Worksheet Item Wise';
     DataClassification = ToBeClassified;
@@ -219,11 +219,12 @@ table 50110 "PM Planning Item Wise"
         PlanningWorksheet_Loc_1.DeleteAll();
         Commit();
         Location_loc.Reset();
+        //Location_loc.SetFilter(Code, 'RED|BLUE|GREEN|YELLOW|WHITE');
         Location_loc.SetRange("Reject Unit", false);
         if Location_loc.FindSet() then begin
             repeat
                 Item_Loc.Reset();
-                //Item_Loc.SetFilter("No.", '70063|70064|70066|70067|70068|70069');
+                //Item_Loc.SetFilter("No.", '70061|70062|70064|70066|70067|70068|70069|70070|70071|70072|70073');
                 IF Item_Loc.FindSet() then begin
                     repeat
                         CalculateDemandNewLogic03112023(Item_Loc, Location_loc);

@@ -1,4 +1,4 @@
-table 50104 "Approval Entry Indent"
+table 50024 "Approval Entry Indent"
 {
     fields
     {

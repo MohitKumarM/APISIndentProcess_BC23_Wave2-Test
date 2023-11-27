@@ -1,10 +1,10 @@
-page 50138 "Approved Quote Comparison"
+page 50094 "Not Qualified Quote Comparison"
 {
     ApplicationArea = All;
-    Caption = 'Approved Quote Comparison';
+    Caption = 'Not Qualified Quote Comparison';
     PageType = List;
     SourceTable = "Quote Comparison";
-    SourceTableView = where(Status = filter(Approved));
+    SourceTableView = where(Status = filter("Not Qualified"), Pending = const(false));
     UsageCategory = History;
     InsertAllowed = false;
     DeleteAllowed = false;
@@ -20,6 +20,14 @@ page 50138 "Approved Quote Comparison"
                 field("Entry No."; Rec."Entry No.")
                 {
                     ToolTip = 'Specifies the value of the Entry No. field.';
+                }
+                field("PO No."; Rec."PO No.")
+                {
+
+                }
+                field("PO Line No."; Rec."PO Line No.")
+                {
+
                 }
 
                 field("Type"; Rec."Type")

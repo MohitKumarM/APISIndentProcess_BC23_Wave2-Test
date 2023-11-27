@@ -1,4 +1,4 @@
-table 50105 "BCL Costing Master"
+table 50025 "BCL Costing Master"
 {
     DataClassification = ToBeClassified;
 

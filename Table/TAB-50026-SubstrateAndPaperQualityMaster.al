@@ -1,4 +1,4 @@
-table 50106 "Substrate-Paper Quality Master"
+table 50026 "Substrate-Paper Quality Master"
 {
     Caption = 'Substrate-Paper Quality Maste';
     DataClassification = ToBeClassified;

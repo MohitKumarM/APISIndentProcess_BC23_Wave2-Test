@@ -1,4 +1,4 @@
-table 50102 "Posted Indent Header"
+table 50022 "Posted Indent Header"
 {
 
     fields

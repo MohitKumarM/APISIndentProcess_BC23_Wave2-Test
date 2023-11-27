@@ -1,10 +1,10 @@
-page 50141 "Pending Appr. Quote Comparison"
+page 50092 "Approved Quote Comparison"
 {
     ApplicationArea = All;
-    Caption = 'Pending Approval Quote Comparison';
+    Caption = 'Approved Quote Comparison';
     PageType = List;
     SourceTable = "Quote Comparison";
-    SourceTableView = where(Status = filter("Not Qualified" | "Pending Approval"), Pending = Const(true));
+    SourceTableView = where(Status = filter(Approved));
     UsageCategory = History;
     InsertAllowed = false;
     DeleteAllowed = false;
@@ -140,70 +140,6 @@ page 50141 "Pending Appr. Quote Comparison"
             }
         }
     }
-
-
-    Actions
-    {
-        Area(Processing)
-        {
-            action("Cancel Approval")
-            {
-                Promoted = true;
-                PromotedIsBig = true;
-                PromotedCategory = Process;
-                ApplicationArea = all;
-                trigger OnAction()
-                var
-                    EntryNo: Integer;
-                    AppEntryIndentEntryno: Record "Approval Entry Indent";
-                    ApprovalEntryIndent: Record "Approval Entry Indent";
-                    QuoteComparision_Loc: Record "Quote Comparison";
-                    IndentHeader_Temp: Record "Posted Indent Header" temporary;
-                begin
-                    IF Not Confirm('Do you want to cancel Pending Approval Lines') then
-                        exit;
-
-                    Clear(EntryNo);
-                    if AppEntryIndentEntryno.FindLast then
-                        EntryNo := AppEntryIndentEntryno."Entry No.";
-
-                    Clear(QuoteComparision_Loc);
-                    CurrPage.SetSelectionFilter(QuoteComparision_Loc);
-                    IF QuoteComparision_Loc.FindSet() then begin
-                        repeat
-
-                            AppEntryIndentEntryno.Reset();
-                            AppEntryIndentEntryno.SetRange("Quote Comparison Entry No.", QuoteComparision_Loc."Entry No.");
-                            AppEntryIndentEntryno.SetRange("Sent for approval", true);
-                            if AppEntryIndentEntryno.Findfirst then
-                                repeat
-                                    AppEntryIndentEntryno."Sent for approval" := false;
-                                    AppEntryIndentEntryno.Modify;
-                                until AppEntryIndentEntryno.Next = 0;
-
-                            ApprovalEntryIndent.Init;
-                            EntryNo += 1;
-                            ApprovalEntryIndent."Entry No." := EntryNo;
-                            ApprovalEntryIndent."Quote Comparison Entry No." := QuoteComparision_Loc."Entry No.";
-                            ApprovalEntryIndent."Cancel UserID" := UserId;
-                            ApprovalEntryIndent."Cancel DateTime" := CurrentDateTime;
-                            ApprovalEntryIndent.Status := ApprovalEntryIndent.Status::Cancel;
-                            ApprovalEntryIndent."Sent for approval" := false;
-                            ApprovalEntryIndent.Insert;
-
-
-                            QuoteComparision_Loc.Status := QuoteComparision_Loc.Status::Open;
-                            QuoteComparision_Loc.Pending := false;
-                            QuoteComparision_Loc.Modify();
-
-                        until QuoteComparision_Loc.Next() = 0;
-                        Message('Lines has been  cancelled for approval and reopened');
-                    end else
-                        Error('There are no lines selected');
-                    CurrPage.Update();
-                end;
-            }
-        }
-    }
+    var
 
 }

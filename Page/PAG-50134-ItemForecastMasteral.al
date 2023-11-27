@@ -1,4 +1,4 @@
-page 50146 "Item Forecast Master"
+page 50134 "Item Forecast Master"
 {
     ApplicationArea = All;
     Caption = 'Item Forecast Master';

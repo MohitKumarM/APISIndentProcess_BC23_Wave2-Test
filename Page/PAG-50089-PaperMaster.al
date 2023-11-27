@@ -1,4 +1,4 @@
-page 50135 "Paper Master"
+page 50089 "Paper Master"
 {
 
     Caption = 'Paper Master';
